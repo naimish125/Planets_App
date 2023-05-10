@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:planetsapp/Screens/Planets/controller/Planets_Controller.dart';
 
-import '../controller/Planets_Controller.dart';
 
 class PLanetsScreens extends StatefulWidget {
   const PLanetsScreens({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class PLanetsScreens extends StatefulWidget {
 }
 
 class _PLanetsScreensState extends State<PLanetsScreens> with TickerProviderStateMixin {
-  PLanetsController homeController = Get.put(PLanetsController());
+  PLanetsController Planetcontroller = Get.put(PLanetsController());
   AnimationController? animationController;
 
   @override
@@ -27,53 +27,13 @@ class _PLanetsScreensState extends State<PLanetsScreens> with TickerProviderStat
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(centerTitle: true,backgroundColor: Colors.black,title: Text("Planets App",style: TextStyle(color: Colors.white),)),
         backgroundColor: Color(0xff282559),
         body: Column(
           children: [
-            Container(
-              height: 55,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Colors.black,
-                    Colors.blue.shade200,
-                  ],
-                ),
-              ),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 30,
-                  ),
-                  Icon(
-                    Icons.menu,
-                    color: Colors.white,
-                  ),
-                  Spacer(),
-                  Text(
-                    "Planets",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Spacer(),
-                  Icon(
-                    Icons.search,
-                    color: Colors.white,
-                  ),
-                  SizedBox(
-                    width: 30,
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
             Expanded(
               child: ListView.builder(
-                itemCount: homeController.PlanetList.length,
+                itemCount: Planetcontroller.PlanetList.length,
                 itemBuilder: (context, index) {
                   return Obx(
                         () => Container(
@@ -110,8 +70,8 @@ class _PLanetsScreensState extends State<PLanetsScreens> with TickerProviderStat
                                   ),
                                   InkWell(
                                     onTap: () {
-                                      homeController.h1.value =
-                                      homeController.PlanetList[index];
+                                      Planetcontroller.h1.value =
+                                      Planetcontroller.PlanetList[index];
                                     },
                                     child: Container(
                                       height: 180,
@@ -125,7 +85,7 @@ class _PLanetsScreensState extends State<PLanetsScreens> with TickerProviderStat
                                               padding: EdgeInsets.only(
                                                   left: 80, top: 40),
                                               child: Text(
-                                                "${homeController.PlanetList[index].name}",
+                                                "${Planetcontroller.PlanetList[index].name}",
                                                 style: TextStyle(
                                                     color: Colors.white,
                                                     fontSize: 28,
@@ -175,7 +135,7 @@ class _PLanetsScreensState extends State<PLanetsScreens> with TickerProviderStat
                                                   width: 2,
                                                 ),
                                                 Text(
-                                                  "${homeController.PlanetList[index].distance} km",
+                                                  "${Planetcontroller.PlanetList[index].distance} km",
                                                   style: TextStyle(
                                                       color: Colors.grey,
                                                       fontSize: 15),
@@ -192,7 +152,7 @@ class _PLanetsScreensState extends State<PLanetsScreens> with TickerProviderStat
                                                   width: 2,
                                                 ),
                                                 Text(
-                                                  "${homeController.PlanetList[index].gravity} m/s²",
+                                                  "${Planetcontroller.PlanetList[index].gravity} m/s²",
                                                   style: TextStyle(
                                                       color: Colors.grey,
                                                       fontSize: 15),
@@ -216,7 +176,7 @@ class _PLanetsScreensState extends State<PLanetsScreens> with TickerProviderStat
                                 height: 110,
                                 width: 110,
                                 child: Image.asset(
-                                    "${homeController.PlanetList[index].image}"),
+                                    "${Planetcontroller.PlanetList[index].image}"),
                               ),
                               builder: (context, child) {
                                 return Transform.rotate(

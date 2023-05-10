@@ -7,15 +7,6 @@ class PLanetsController extends GetxController
 
   RxList<PLanetModel> PlanetList = [
     PLanetModel(
-        image: "assets/images/mars.png",
-        name: "Mars",
-        distance: "54.6m",
-        gravity: "3.711",
-        distance_earth: "120.77m",
-        distance_sun: "239.28m",
-        price: "2.8"
-    ),
-    PLanetModel(
         image: "assets/images/neptune.png",
         name: "Neptune",
         distance: "2.7b",
@@ -25,14 +16,15 @@ class PLanetsController extends GetxController
         price: "2.8"
     ),
     PLanetModel(
-        image: "assets/images/moon.png",
-        name: "Moon",
-        distance: "384.4k",
-        gravity: "1.62",
-        distance_earth: "384,4k",
-        distance_sun: "93m",
+        image: "assets/images/mars.png",
+        name: "Mars",
+        distance: "54.6m",
+        gravity: "3.711",
+        distance_earth: "120.77m",
+        distance_sun: "239.28m",
         price: "2.8"
     ),
+
     PLanetModel(
         image: "assets/images/earth.png",
         name: "Earth",
@@ -40,6 +32,15 @@ class PLanetsController extends GetxController
         gravity: "9.698",
         distance_earth: "0",
         distance_sun: "147.24m",
+        price: "2.8"
+    ),
+    PLanetModel(
+        image: "assets/images/moon.png",
+        name: "Moon",
+        distance: "384.4k",
+        gravity: "1.62",
+        distance_earth: "384,4k",
+        distance_sun: "93m",
         price: "2.8"
     ),
     PLanetModel(
@@ -61,7 +62,7 @@ class PLanetsController extends GetxController
         price: "2.8"
     ),
     PLanetModel(
-        image: "assets/images/edu_ring_a-round_the_saturn.jpg",
+        image: "assets/images/saturn.png",
         name: "Saturn",
         distance: "1.6041b",
         gravity: "10.44",
@@ -70,7 +71,7 @@ class PLanetsController extends GetxController
         price: "2.8"
     ),
     PLanetModel(
-        image: "assets/images/vanus.jpg",
+        image: "assets/images/venus.png",
         name: "Venus",
         distance: "229.53m",
         gravity: "8.87",
@@ -79,7 +80,7 @@ class PLanetsController extends GetxController
         price: "2.8"
     ),
     PLanetModel(
-        image: "assets/images/urnus.jpg",
+        image: "assets/images/uranus.png",
         name: "Uranus",
         distance: "2.9068b",
         gravity: "8.87",
